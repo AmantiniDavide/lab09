@@ -1,12 +1,10 @@
 package it.unibo.mvc;
-
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import java.awt.BorderLayout;
-import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
@@ -40,9 +38,8 @@ public class BadIOGUI {
      * Creates a new BadIOGUI.
      */
     public BadIOGUI() {
-        final JPanel canvas = new JPanel();
         final JPanel canvas1 = new JPanel();
-        canvas1.setLayout(new BoxLayout(canvas1,BoxLayout.X_AXIS));
+        canvas1.setLayout(new BoxLayout(canvas1, BoxLayout.X_AXIS));
         final JButton write = new JButton("Write on file");
         final JButton read = new JButton("Read on file");
         canvas1.add(write, BorderLayout.CENTER);
@@ -76,8 +73,8 @@ public class BadIOGUI {
             @Override
             public void actionPerformed(final ActionEvent e) {
                 try {
-                    List<String> lines = Files.readAllLines(new File(PATH).toPath(), StandardCharsets.UTF_8);
-                    for (String line : lines) {
+                    final List<String> lines = Files.readAllLines(new File(PATH).toPath(), StandardCharsets.UTF_8);
+                    for (final String line : lines) {
                         System.out.println(line);  // Print each line of the file to the terminal
                     }
                 } catch (IOException e1) {
