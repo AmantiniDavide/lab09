@@ -75,7 +75,7 @@ public class BadIOGUI {
                 try {
                     final List<String> lines = Files.readAllLines(new File(PATH).toPath(), StandardCharsets.UTF_8);
                     for (final String line : lines) {
-                        System.out.println(line);  // Print each line of the file to the terminal
+                        System.out.println(line);  // Print each line of the file to the terminal //NOPMD
                     }
                 } catch (IOException e1) {
                     JOptionPane.showMessageDialog(frame, e1, "Error", JOptionPane.ERROR_MESSAGE);
